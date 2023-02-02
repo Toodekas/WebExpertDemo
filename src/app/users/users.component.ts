@@ -15,7 +15,8 @@ export class UsersComponent implements OnInit {
   get filteredUsers() {
     return this.users$.filter(user => 
       user.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      user.email.toLowerCase().includes(this.searchTerm.toLowerCase())
+      user.email.toLowerCase().includes(this.searchTerm.toLowerCase())||
+      user.website.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
 
