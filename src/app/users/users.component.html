@@ -1,0 +1,17 @@
+<h1>Users</h1>
+
+<div class="search-container">
+  <input type="text" placeholder="Search by name or email" [(ngModel)]="searchTerm">
+</div>
+
+<ul>
+  <li *ngFor="let user of filteredUsers">
+    <div class="user-item">
+      <a routerLink="/user/{{ user.id }}" routerLinkActive="activated" [routerLinkActiveOptions]="{exact:true}">{{ user.name }}</a>
+      <ul>
+        <li><span class="label">Email:</span>{{ user.email }}</li>
+        <li><span class="label">Website:</span>{{ user.website }}</li>
+      </ul>
+    </div>
+  </li>
+</ul>
